@@ -29,6 +29,11 @@ Now let's try installing our python resources:
 pip3 install numpy scipy librosa unidecode inflect librosa
 ```
 
+Let's put the file back we moved at the start: 
+```
+sudo mv /usr/include/tbb/tbb.bak /usr/include/tbb/tbb.h
+```
+
 We are now ready to try running the example.  Create a file named `test.py` with the following content:
 ```
 import torch
@@ -74,3 +79,10 @@ export LD_PRELOAD=/home/rdejana/.local/lib/python3.6/site-packages/sklearn/__che
 and rerun `python3 test.py`.
 
 When completed, you should see the file `audio.wav`.  You can play on your nx with headphones or copy to another machine.
+
+
+
+Links I used:
+- https://forums.developer.nvidia.com/t/cuda-toolkit-version-problem-when-trying-to-run-a-python-script-on-gpu-through-numbas-jit-cuda-modules-on-agx-xavier/129469/5
+- https://forums.developer.nvidia.com/t/instll-python-packages-librosa-and-llvm-on-jetson-nano-developer-kit-problem/74543/7
+- https://stackoverflow.com/questions/61065541/importerror-usr-lib-aarch64-linux-gnu-libgomp-so-1-cannot-allocate-memory-in
